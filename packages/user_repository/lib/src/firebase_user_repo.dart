@@ -1,4 +1,5 @@
-import 'package:user_repository/user_repo.dart';
+import 'package:user_repository/src/models/user.dart';
+import 'package:user_repository/src/user_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -18,7 +19,7 @@ class FirebaseUserRepo implements UserRepository {
   }
 
   @override
-  Future<void> setUserData(user) {
+  Future<void> setUserData(MyUser user) {
     // TODO: implement setUserData
     throw UnimplementedError();
   }
@@ -30,12 +31,12 @@ class FirebaseUserRepo implements UserRepository {
   }
 
   @override
-  Future<dynamic> signup(myUser, String password) {
+  Future<MyUser> signup(MyUser myUser, String password) {
     // TODO: implement signup
     throw UnimplementedError();
   }
 
   @override
   // TODO: implement use
-  Stream<dynamic> get use => throw UnimplementedError();
+  Stream<MyUser?> get use => throw UnimplementedError();
 }

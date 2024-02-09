@@ -1,3 +1,5 @@
+import '../entities/entities.dart';
+
 class MyUser {
   String userid;
   String email;
@@ -16,12 +18,12 @@ class MyUser {
   static final empty =
       MyUser(email: '', name: '', userid: '', hasActiveCart: false);
 
-  myUserEntity toEntity() {
-    return myUserEntity(
+  MyUserEntity toEntity() {
+    return MyUserEntity(
         email: email, name: name, userid: userid, hasActiveCart: hasActiveCart);
   }
 
-  static MyUser fromEntity(MyuserEntity entity) {
+  static MyUser fromEntity(MyUserEntity entity) {
     return MyUser(
         email: entity.email,
         name: entity.name,
