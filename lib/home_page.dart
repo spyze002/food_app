@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_repository/user_repository.dart';
+import 'blocs/authentication_bloc/authentication_bloc.dart';
 
 class Homepage extends StatelessWidget {
   final UserRepository userRepository;
@@ -7,6 +9,9 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return RepositoryProvider<AuthenticationBloc>(
+      create: (context) => AuthenticationBloc(userRepository: userRepository),
+      child: MyAppView(),
+    );
   }
 }
